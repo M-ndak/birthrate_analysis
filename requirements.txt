@@ -3,8 +3,4 @@ scikit-learn
 pandas
 numpy
 joblib
-<<<<<<< HEAD
-=======
-kagglehub
->>>>>>> dafb54910514679376665084a32a07afd0de0978
 gunicorn
