@@ -18,31 +18,6 @@ birth statistics (1899-2023) to predict total births for a given year.
 └── README.md
 ```
 
-## Setup (local)
-
-```bash
-pip install -r requirements.txt
-python train.py      # regenerates model/birth_model.joblib from the CSV
-python app.py          # runs locally at http://localhost:5000
-```
-
-## API usage
-
-```bash
-curl "http://localhost:5000/predict?year=2025"
-```
-
-## Deploying to Render.com
-
-1. Push this repo to GitHub, **including `model/birth_model.joblib`** —
-   Render's build does not run `train.py`.
-2. On Render.com, create a **Web Service** (or use Blueprint with `render.yaml`)
-   connected to this repo.
-3. Build Command: `pip install -r requirements.txt`
-   Start Command: `gunicorn app:app`
-4. If Render ignores `render.yaml`'s Python version, set
-   `PYTHON_VERSION=3.11.0` manually under the service's Environment settings.
-
 ## Model
 
 Random Forest Regressor (300 trees) on year -> total_births.
